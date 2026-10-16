@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #285943;
+    --color-primary-dark: #173D2B;
+    --color-secondary: #7FA58A;
+    --color-background: #F7F5EF;
+    --color-surface: #FFFFFF;
+    --color-text-primary: #1F2933;
+    --color-text-secondary: #667085;
+    --color-success: #2E7D5B;
+    --color-warning: #C88719;
+    --color-critical: #B54747;
+    --color-border: #E5E7EB;
+  }
+
+  body {
+    background-color: #F7F5EF;
+    color: #1F2933;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
+
+  /* Consistent focus indicator for accessibility */
+  :focus-visible {
+    outline: 2px solid #285943;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Typographic Hierarchy */
+  .text-display {
+    font-size: 2.25rem; /* 36px mobile */
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+  @media (min-width: 768px) {
+    .text-display {
+      font-size: 3.25rem; /* 52px desktop */
+      line-height: 1.12;
+    }
+  }
+
+  .text-h1 {
+    font-size: 1.75rem; /* 28px mobile */
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  @media (min-width: 768px) {
+    .text-h1 {
+      font-size: 2.25rem; /* 36px desktop */
+      line-height: 1.2;
+    }
+  }
+
+  .text-h2 {
+    font-size: 1.5rem; /* 24px-28px */
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .text-h3 {
+    font-size: 1.1875rem; /* 19px */
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .text-body {
+    font-size: 1rem; /* 16px (comfortable 15-17px) */
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .text-metadata {
+    font-size: 0.84375rem; /* 13.5px */
+    line-height: 1.45;
+    color: #667085;
+    font-weight: 400;
+  }
+}
