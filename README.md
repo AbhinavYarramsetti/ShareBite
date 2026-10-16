@@ -1,140 +1,171 @@
-# ShareBite
+# ShareBite — Turning Surplus Food into Shared Meals
 
-> **Turn Surplus Meals Into Shared Meals.**  
-> A web application connecting commercial restaurant kitchens in Chennai with local children's homes, care institutions, and shelters to safely redirect surplus food before it loses freshness.
+**ShareBite** is a Chennai-centric food redistribution platform concept designed to connect restaurants with surplus prepared food to children's homes, care institutions, and shelters. It demonstrates how surplus meals can be listed, matched with recipient institutions, and tracked through a structured pickup and delivery workflow.
 
-[![Build Status](https://img.shields.io/badge/Build-Passing-285943)](https://github.com/AbhinavYarramsetti/sharebite)
-[![License: MIT](https://img.shields.io/badge/License-MIT-7FA58A.svg)](https://opensource.org/licenses/MIT)
-[![Chennai-Centric Dataset](https://img.shields.io/badge/Data-Chennai%20Metropolitan-173D2B)](#)
+🌐 **Live Demo:** [https://sharebite-psi.vercel.app/](https://sharebite-psi.vercel.app/)
 
----
-
-## 1. Overview & Core Mission
-
-Commercial restaurants and catering establishments in Chennai regularly produce fresh, hygienic surplus food. However, they have limited time before prepared food exceeds its safe freshness window. Meanwhile, care institutions, children's homes, and shelters across the city require nutritious, wholesome meals.
-
-Traditional food donation workflows often struggle with:
-- **Time Sensitivity:** Surplus food must be logged, matched, and transported within a strict freshness window.
-- **Coordination Overhead:** Manual phone calls and uncertain logistics lead to wasted food.
-- **Dietary & Capacity Mismatch:** Meals must match institution dietary preferences and facility size.
-
-**ShareBite** streamlines this process:
-- **Tracked Freshness Windows:** Real-time visibility into remaining safe consumption buffers.
-- **Deterministic Explainable Matching:** Connects restaurants with nearby care institutions based on freshness, capacity, dietary preferences, and travel estimates.
-- **Standardized Safety Checklists:** Volunteer handovers confirm hygienic packaging, temperature status, and timely transfer.
-- **Client-Side Persistence:** Fully browser-based with `localStorage` state management and instant demo reset.
-
-> **Demonstration Notice:**  
-> ShareBite uses publicly available organisation and business information for demonstration purposes. Listings do not imply affiliation, participation or endorsement by any of the listed entities. See [`docs/chennai-data-sources.md`](./docs/chennai-data-sources.md) for data sources and verification details.
+💻 **GitHub Repository:** [https://github.com/AbhinavYarramsetti/ShareBite](https://github.com/AbhinavYarramsetti/ShareBite)
 
 ---
 
-## 2. Technology Stack
+## Table of Contents
 
-- **Framework:** React 18+ (Hooks & Functional Architecture)
-- **Language:** TypeScript 5+
-- **Bundler:** Vite
-- **Styling:** Tailwind CSS with dedicated design tokens
-- **Iconography:** Lucide React
-- **Persistence:** Browser `localStorage` (No external database, backend, or API keys required)
-- **Deployment:** Vercel-ready static application
+- [Overview](#overview)
+- [Features](#features)
+- [Application Workflow](#application-workflow)
+- [Technology Stack](#technology-stack)
+- [Getting Started](#getting-started)
+- [Running Locally](#running-locally)
+- [Building for Production](#building-for-production)
+- [Demo Data and Limitations](#demo-data-and-limitations)
+- [Deployment](#deployment)
+- [Future Enhancements](#future-enhancements)
 
----
+## Overview
 
-## 3. Getting Started
+Food surplus and food insecurity often coexist within the same city. ShareBite explores a digital workflow that helps make surplus food redistribution more organised and transparent.
+
+The application uses a Chennai-centric demonstration dataset featuring restaurant locations, neighbourhoods, and child-care institutions. It provides interactive interfaces for exploring donations, matching surplus meals with recipient institutions, and tracking the handover process.
+
+ShareBite is built as a frontend application with local browser storage, making it easy to run, demonstrate, and extend without requiring a backend service.
+
+## Features
+
+- **Restaurant Dashboard:** Explore the restaurant-side donation workflow and manage sample surplus-food listings.
+- **Donation Management:** Create and review sample food donations.
+- **Recipient Matching:** Explore potential matches between surplus meals and recipient institutions.
+- **Institution Dashboard:** Demonstrate the recipient-side experience for reviewing available donations.
+- **Logistics Tracking:** Follow a structured pickup and delivery progression.
+- **Completion Workflow:** Demonstrate the final handover and donation-completion experience.
+- **Chennai-Centric Dataset:** Use restaurant branches and neighbourhood-based sample data relevant to Chennai.
+- **Role Switching:** Switch between available demonstration roles to explore different user journeys.
+- **Persistent Demo State:** Store supported application state in browser localStorage.
+- **Responsive Interface:** Access the application through a modern web browser on supported desktop and mobile screen sizes.
+
+## Application Workflow
+
+The main demonstration journey follows these stages:
+
+1. **List surplus food:** A restaurant creates a sample donation with relevant food and quantity details.
+2. **Explore matches:** The application presents potential recipient institutions using the available demonstration data and matching logic.
+3. **Review and accept:** The recipient-side workflow demonstrates reviewing and accepting a suitable donation.
+4. **Track logistics:** The application progresses through the pickup and delivery stages.
+5. **Complete the handover:** The final screen demonstrates completion of the donation workflow.
+
+The workflow is intended to demonstrate the product experience rather than process actual food donations.
+
+## Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| React | Component-based user interface |
+| TypeScript | Type-safe application development |
+| Vite | Development server and production build tooling |
+| Tailwind CSS | Utility-first styling and design implementation |
+| Lucide React | Interface icons |
+| Browser localStorage | Persistence of supported demonstration state |
+| Vercel | Web application deployment |
+| Git and GitHub | Version control and source-code hosting |
+
+## Getting Started
 
 ### Prerequisites
-Node.js 18+ and npm installed.
 
-### Installation & Local Run
+Install the following on your system:
+
+- [Node.js](https://nodejs.org/) — preferably a supported LTS release
+- npm, included with Node.js
+- [Git](https://git-scm.com/) for version control
+
+### Clone the Repository
+
 ```bash
-# Clone the repository
-git clone https://github.com/AbhinavYarramsetti/sharebite.git
+git clone https://github.com/AbhinavYarramsetti/ShareBite.git
+cd ShareBite
+```
 
-# Navigate to project directory
-cd servelink
+### Install Dependencies
 
-# Install dependencies
+```bash
 npm install
+```
 
-# Start local development server
+## Running Locally
+
+Start the Vite development server:
+
+```bash
 npm run dev
 ```
-Open your browser to `http://localhost:5173`.
 
-### Production Build
+Open the local URL printed in the terminal, usually:
+
+`http://localhost:5173/`
+
+To stop the development server, press `Ctrl + C` in the terminal.
+
+## Building for Production
+
+Create an optimised production build:
+
 ```bash
-# Typecheck and build for production
 npm run build
+```
 
-# Preview production build locally
+Vite generates the production output in the `dist/` directory.
+
+To preview the production build locally:
+
+```bash
 npm run preview
 ```
 
----
+Open the local preview URL printed by Vite.
 
-## 4. Key Workflows & User Roles
+## Demo Data and Limitations
 
-ShareBite includes a sample account switcher in the top navigation to experience the platform from different perspectives:
+ShareBite is currently a frontend demonstration application.
 
-1. **Public Overview (Landing Page):**
-   - Clear value proposition and visual surplus redirection flow.
-   - Live donation preview card featuring verified Chennai locations.
-   - Impact summary and food safety standards.
+- Restaurant and institution information is used to provide a Chennai-centric demonstration experience.
+- Donations, quantities, availability, matching activity, and delivery progress may be sample data.
+- The application does not establish real partnerships with listed restaurants or institutions.
+- Application state stored in localStorage is specific to the browser and device. It is not shared between users or synchronised across devices.
+- There is no production backend, central database, live dispatch system, or real-time mapping integration.
+- Distances and route information should not be interpreted as live navigation or real-time travel estimates.
+- The demonstration does not itself arrange actual food collection, transportation, or delivery.
 
-2. **Restaurant Operations (e.g., Mathsya — T. Nagar):**
-   - Dominant action: **Create Donation**.
-   - Input surplus details using fast selection pills for dietary classification and portion quantity.
-   - Explainable recipient matching showing reasons (freshness buffer, dietary match, capacity fit, proximity).
+## Deployment
 
-3. **Care Institution Portal (e.g., Bala Mandir Kamaraj Trust):**
-   - Dietary filtering (`All Diets`, `Vegetarian Only`, `Non-Vegetarian`, `Mixed`).
-   - Feed of available fresh meal donations with countdowns.
-   - One-click acceptance modal with receiving facility confirmation.
+ShareBite is deployed on Vercel.
 
-4. **Delivery Partner View (e.g., Kavya Rajan):**
-   - Step-by-step delivery progress: `Accepted` $\to$ `Pickup Confirmed` $\to$ `In Transit` $\to$ `Arriving Soon` $\to$ `Delivered`.
-   - Mandatory volunteer safety checklist (packaging, labelling, freshness window, recipient confirmation).
-   - Direct handover completion summary.
+**Live application:** [https://sharebite-psi.vercel.app/](https://sharebite-psi.vercel.app/)
 
----
+The deployment is connected to the GitHub repository. After committing and pushing changes to the `main` branch, Vercel can automatically build and deploy the updated application.
 
-## 5. Design System
+Typical update commands:
 
-ShareBite employs a restrained, accessible design palette inspired by freshness, sustainability, and community trust:
+```bash
+git add .
+git commit -m "Update ShareBite"
+git push origin main
+```
 
-| Token | Hex | Semantic Role |
-| :--- | :--- | :--- |
-| **Primary (Forest Green)** | `#285943` | Primary action buttons, active navigation, brand elements |
-| **Primary Dark (Deep Forest)** | `#173D2B` | Headings, hero emphasis, dark text accents |
-| **Secondary (Sage)** | `#7FA58A` | Secondary badges, soft borders, subtle highlights |
-| **Background (Warm Cream)** | `#F7F5EF` | Main application canvas |
-| **Surface (White)** | `#FFFFFF` | Cards, modals, dialog surfaces |
-| **Text Primary (Charcoal)** | `#1F2933` | Primary readable text |
-| **Text Secondary (Slate)** | `#667085` | Metadata, timestamps, supporting copy |
-| **Status: Success** | `#2E7D5B` | Completed deliveries, verified stages |
-| **Status: Urgent (Amber)** | `#C88719` | Time-sensitive freshness alerts (15–30 min remaining) |
-| **Status: Critical** | `#B54747` | Expired freshness windows |
+The production deployment updates after Vercel successfully completes the build.
 
----
+## Future Enhancements
 
-## 6. Research & Chennai Dataset
+Potential future improvements include:
 
-For full documentation on verified Chennai restaurants, care institutions, route approximations, and methodology, see:
-- [`docs/chennai-data-sources.md`](./docs/chennai-data-sources.md)
+- Backend integration and secure user authentication.
+- Persistent, shared donation and institution records.
+- More advanced donation-to-institution matching.
+- Verified route-distance and delivery-planning integrations.
+- Notifications for donation acceptance and handover progress.
+- Reporting and analytics for food redistribution activity.
+- Production-grade access control and data validation.
+
+These are potential enhancements, not claims about functionality already implemented.
 
 ---
 
-## 7. State Management & Demo Reset
-
-All application state is saved locally in the browser via `localStorage`.
-
-To reset the application to its seeded state at any time:
-- Open the user account dropdown in the top right corner.
-- Click **Reset demo data**.
-
----
-
-## 8. License
-
-Distributed under the MIT License.
+*ShareBite — Making surplus meals easier to share.*
